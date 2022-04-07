@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
-
 /**
  * main - is the first line
  *
- * Return: returns 1 
+ * Return: returns 0
  */
 int main(void)
 {
