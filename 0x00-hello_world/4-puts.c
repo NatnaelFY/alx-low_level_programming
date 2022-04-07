@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
  * main - the first 
+ *
  * Return: to be follwed
  */
 int main(void)
