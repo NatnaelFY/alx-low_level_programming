@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - is the first step. 
+ * main - is the first line
  *
  * Return: returns 0
  */
