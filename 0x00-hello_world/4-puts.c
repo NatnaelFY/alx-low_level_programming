@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - the first 
+ * main - 
  *
- * Return: to be follwed
+ * Return:
  */
 int main(void)
 {
