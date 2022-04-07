@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - 
+ * main - First step 
  *
- * Return:
+ * Return: returns 0
  */
 int main(void)
 {
