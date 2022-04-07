@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main - First step 
  *
+ * main - First step 
  * Return: returns 0
  */
 int main(void)
