@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * main is the First step 
+ * main- is the first step 
+ *
  * Return: returns 0
  */
 int main(void)
