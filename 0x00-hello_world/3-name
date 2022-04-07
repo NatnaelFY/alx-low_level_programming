@@ -1,1 +1,2 @@
 #!/bin/bash
+gcc -Wall -g -c cisfun.c 
