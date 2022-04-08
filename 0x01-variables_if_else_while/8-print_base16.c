@@ -3,7 +3,7 @@
 /**
  * main - prints all the numbers of base 16 in lowercase,
  * followed by a new line
- * Return: return 0 
+ * Return: return 0
  */
 int main(void)
 {

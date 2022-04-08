@@ -3,7 +3,7 @@
 /**
  * main - prints the alphabet in lowercase,
  * followed by a new line, except q and e
- * Return: returns 0 
+ * Return: returns 0
  */
 int main(void)
 {
