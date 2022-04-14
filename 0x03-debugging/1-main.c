@@ -6,16 +6,18 @@
 
 int main(void)
 {
-	int j;
-
+	/*
+	 * int j;
+	 */
 	printf("Infinite loop incoming: \n");
-
-	j = 0;
+	/*
+	 * j = 0;
+	 *
 
 	while (j < 10)
 	{
 		putchar(j);
-	}
+	}*/
 	
 	printf("Infinite loop avoided! \\o/\n");
 
