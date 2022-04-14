@@ -8,11 +8,11 @@
 int main(void)
 {
 	/*
-	 * int j;
+	 * int i;
 	 */
 	printf("Infinite loop incoming:(\n");
 	/*
-	 * j = 0;
+	 * i = 0;
 	 */
 	/*
 	 * while (j < 10)
