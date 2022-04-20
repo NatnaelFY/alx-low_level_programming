@@ -20,5 +20,6 @@ char *cap_string(char *s)
 					if (s[i] == delimeters[j] && s[i + 1] >= 97 && s[i + 1] <= 122)
 						s[i + 1] = s[i + 1] - 32;
 	}
+
 	return (s);
 }
