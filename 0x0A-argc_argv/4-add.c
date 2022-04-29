@@ -2,64 +2,57 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
-
+#define UNUSED(x) (void)(x)
 /**
- * check_num - check - string there are digit
- * @str: array str
- *
- * Return: Always 0 (Success)
+ * StringCheck - checks string
+ * @s: string to check
+ * Return: boolean
  */
-
-int check_num(char *str)
-
+int StringCheck(char *s)
 {
-	unsigned int count;
+	int i = 0;
 
-	count = 0;
-	while (count < strlen(str))
+	for (; s[i] != '\0'; i++)
 	{
-		if (!isdigit(str[count]))
+		if (!isdigit(s[i]))
 		{
 			return (0);
 		}
-		count++;
 	}
 	return (1);
 }
-
 /**
- * main - Print the name of the program
- * @argc: Count arguments
- * @argv: Arguments
- *
- * Return: Always 0 (Success)
+ * main - main function
+ * @argc: argumentc
+ * @argv: vector of arguments
+ *Return: always 0
  */
-
-int main(int argc, char *argv[])
-
+int main(int argc, char  *argv[])
 {
-	int count;
-	int str_to_int;
+	int i;
+	int result = 0;
 
-	int sum = 0;
-	count = 1;
-
-	while (count < argc)
+	if (argc > 1)
 	{
-		if (check_num(argv[count]))
+		for (i = 1; i < argc; i++)
 		{
-			str_to_int = atoi(argv[count]);
-			sum += str_to_int;
+			if (StringCheck(argv[i]))
+			{
+				result += atoi(argv[i]);
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-		count++;
+		printf("%d\n", result);
+		return (0);
 	}
-	printf("%d\n", sum);
+	else
+	{
+		printf("%d\n", 0);
+		return (1);
+	}
 
-	return (0);
 }
