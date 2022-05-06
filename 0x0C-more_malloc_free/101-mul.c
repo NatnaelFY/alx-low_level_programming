@@ -8,6 +8,7 @@
  **/
 
 int _atoi_digit(char x)
+
 {
 	unsigned int res;
 
