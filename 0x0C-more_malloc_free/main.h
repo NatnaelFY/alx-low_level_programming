@@ -1,7 +1,7 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef MAIN_H
+#define MAIN_H
+
+
 int _putchar(char c);
 void *malloc_checked(unsigned int b);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
@@ -13,4 +13,7 @@ int _strlen(char *s);
 int is_digit(char *s);
 int onlyNumbers(char *c);
 void multiply(char* s1, char* s2);
+void print_int(unsigned long int n);
+int _atoi(const char *s);
+void _puts(char *str);
 #endif
