@@ -58,10 +58,10 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	for (i = 0; product[i] == 0 && i < len1 + len2; i++)
 	{}
 	if (i == len1 + len2)
-		_putchar('0');
+		putchar('0');
 	for (; i < len1 + len2; i++)
-		_putchar(product[i] + '0');
-	_putchar('\n');
+		putchar(product[i] + '0');
+	putchar('\n');
 }
 
 /**
@@ -88,12 +88,12 @@ int is_valid(char *num)
   */
 void err(int status)
 {
-	_putchar('E');
-	_putchar('r');
-	_putchar('r');
-	_putchar('o');
-	_putchar('r');
-	_putchar('\n');
+	putchar('E');
+	putchar('r');
+	putchar('r');
+	putchar('o');
+	putchar('r');
+	putchar('\n');
 	exit(status);
 }
 /**
