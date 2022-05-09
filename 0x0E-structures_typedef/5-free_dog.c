@@ -1,43 +1,16 @@
-#include "main.h"
+#include <stdlib.h>
+#include "dog.h"
+
 /**
- * argstostr - prints args
- * @ac: takes in width of grid
- * @av: height of grid
- * Return: the args one line at a time
+ * free_dog - frees memory allocated for a struct dog
+ * @d: struct dog to free
  */
-
-char *argstostr(int ac, char **av)
+void free_dog(dog_t *d)
 {
-	char *str;
-	int count = 0, a = 0, b = 0, c = 0;
-
-	if (ac == 0 || av == NULL)
-		return (NULL);
-	while (a < ac)
+	if (d)
 	{
-		b = 0;
-		while (av[a][b] != '\0')
-		{
-			count++;
-			b++;
-		}
-		a++;
+		free(d->name);
+		free(d->owner);
+		free(d);
 	}
-	count = count + ac + 1;
-	str = malloc(sizeof(char) * count);
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-	for (a = 0; a < ac; a++)
-	{
-		for (b = 0; av[a][b] != '\0'; b++)
-		{
-			str[c] = av[a][b];
-			c++;
-		}
-		str[c] = '\n';
-		c++;
-	}
-	return (str);
 }
