@@ -1,39 +1,31 @@
-#include "main.h"
+#ifndef DOG_H
+#define DOG_H
+
 /**
- *create_array - array for prints a string
- *@size: number elements array
- *@c: char
- *Return: pointer
+ * struct dog - a dog's basic info
+ * @name: First member
+ * @age: Second member
+ * @owner: Third member
+ *
+ * Description: Longer description
  */
-
-char *create_array(unsigned int size, char c)
+struct dog
 {
-	char *buffer;
-	unsigned int position;
+	char *name;
+	float age;
+	char *owner;
+};
 
-	if (size == 0)
-	{
-		return (NULL);
-	}
+/**
+ * dog_t - typedef for struct dog
+ */
+typedef struct dog dog_t;
 
-	/*Define values with malloc*/
-	buffer = (char *) malloc(size * sizeof(c));
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
 
-	if (buffer == 0)
-	{
-		return (NULL);
-	}
-
-	else
-	{
-		position = 0;
-		while (position < size) /*While for array*/
-		{
-			*(buffer + position) = c;
-			position++;
-		}
-
-		return (buffer);
-	}
-
-}
+#endif
