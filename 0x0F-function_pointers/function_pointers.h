@@ -1,5 +1,5 @@
-#ifndef FUNC_H
-#define FUNC_H
+#ifndef _FUNCTION_POINTERS_H_
+#define _FUNCTION_POINTERS_H_
 #include <stdlib.h>
 
 int _putchar(char);
