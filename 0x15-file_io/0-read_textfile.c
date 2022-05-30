@@ -1,50 +1,46 @@
 #include "main.h"
 
 /**
- * read_textfile  - reads a text file and prints
- * @filename:  pointing to a string of 0 and 1 chars
- * @letters : the number of letters it should read and print
- * Return: actual number of letters it could read and print
+ * read_textfile - reads a text file and prints it to the standard output
+ * @filename: name of the file to be read
+ * @letters: number of letters to read and print
+ *
+ * Return: the number of letters printed, or 0 if it failed
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, count = 0, read_file;
-	char *buffer;
+	int fd;
+	int s, t;
+	char *buf;
 
-	/*Check content file*/
-	if (filename == NULL)
+	if (!filename)
 		return (0);
-	buffer = malloc(letters * sizeof(char));
-	/*Check value of buffer*/
-	if (buffer == NULL)
-		return (0);
-	/*Open file*/
+
 	fd = open(filename, O_RDONLY);
-	if (fd == -1) /*If it fails*/
+	if (fd < 0)
+		return (0);
+
+	buf = malloc(sizeof(char) * letters);
+	if (!buf)
+		return (0);
+
+	s = read(fd, buf, letters);
+	if (s < 0)
 	{
-		free(buffer); /*free memory*/
+		free(buf);
 		return (0);
 	}
-	/*Read file*/
-	read_file = read(fd, buffer, letters);
-	if (read_file == -1) /*If it fails*/
+	buf[s] = '\0';
+
+	close(fd);
+
+	t = write(STDOUT_FILENO, buf, s);
+	if (t < 0)
 	{
-		close(fd); /*Close file*/
-		free(buffer);
+		free(buf);
 		return (0);
 	}
-	while (count < read_file)
-	{
-		if (write(STDOUT_FILENO, &buffer[count], 1) == -1)
-		{
-			close(fd);
-			free(buffer);
-			return (0);
-		}
-		count++;
-	}
-	close(fd); /*Close file*/
-	free(buffer); /*Free memory*/
-	return (read_file);
+
+	free(buf);
+	return (t);
 }
